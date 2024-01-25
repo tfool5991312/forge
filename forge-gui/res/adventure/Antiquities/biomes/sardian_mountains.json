@@ -1,0 +1,37 @@
+{
+"startPointX": 0.8,
+"startPointY": 0.45,
+"noiseWeight": 0.2,
+"distWeight": 1.5,
+"name": "red",
+"tilesetAtlas": "world/tilesets/terrain.atlas",
+"tilesetName": "Red",
+"terrain": [
+	{
+		"spriteName": "Red_1",
+		"max": 0.2,
+		"resolution": 10
+	},
+	{
+		"spriteName": "Red_2",
+		"min": 0.8,
+		"max": 1,
+		"resolution": 10
+	}
+],
+"width": 0.55,
+"height": 0.3,
+"color": "b63729",
+"spriteNames": [
+	"Gravel"
+],
+"enemies": [
+],
+"pointsOfInterest": [
+	"Dwarven City"
+],
+"structures": [
+],
+"towns": [
+]
+}

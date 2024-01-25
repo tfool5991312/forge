@@ -122,6 +122,11 @@ public class NewGameScene extends MenuScene {
             AdventureModes.Custom.setSelectionName("[BLACK]" + Forge.getLocalizer().getMessage("lblDeck") + ":");
             AdventureModes.Custom.setModes(custom);
         }
+
+        modes.add(AdventureModes.Timewalk);
+        AdventureModes.Timewalk.setSelectionName("[BLACK]" + Forge.getLocalizer().getMessage("lblWorld") + ":");
+        AdventureModes.Timewalk.setModes(new Array<>(Config.instance().getAdventures()));
+
         String[] modeNames = new String[modes.size];
         for (int i = 0; i < modes.size; i++)
             modeNames[i] = modes.get(i).getName();
@@ -395,6 +400,9 @@ public class NewGameScene extends MenuScene {
                 break;
             case Custom:
                 summaryText.append("Mode: Custom\n\nChoose your own preconstructed deck. Enemies can receive a random genetic AI deck (difficult).\n\nWarning: This will make encounter difficulty vary wildly from the developers' intent");
+                break;
+            case Timewalk:
+                summaryText.append("Mode: Timewalk\n\nMostly for flavor");
                 break;
             default:
                 summaryText.append("No summary available for your this game mode.");

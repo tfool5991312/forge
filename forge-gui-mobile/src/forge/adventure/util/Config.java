@@ -40,14 +40,14 @@ import java.util.List;
 public class Config {
     private static Config currentConfig;
     private final String commonDirectoryName = "common";
-    private final String prefix;
+    private String prefix;
     private final String commonPrefix;
     private final HashMap<String, FileHandle> Cache = new HashMap<>();
     private ConfigData configData;
     private final String[] adventures;
     private SettingData settingsData;
     private String Lang = "en-us";
-    private final String plane;
+    private String plane;
     private ObjectMap<String, ObjectMap<String, Sprite>> atlasSprites = new ObjectMap<>();
     private ObjectMap<PointOfInterestData, Array<Sprite>> poiSprites = new ObjectMap<>();
     private ObjectMap<String, ObjectMap<String, Array<Sprite>>> animatedSprites = new ObjectMap<>();
@@ -66,7 +66,6 @@ public class Config {
         adventures = new File(GuiBase.isAndroid() ? ForgeConstants.ADVENTURE_DIR : path + "/res/adventure").list(planesFilter);
         try {
             settingsData = new Json().fromJson(SettingData.class, new FileHandle(ForgeConstants.USER_ADVENTURE_DIR + "settings.json"));
-
         } catch (Exception e) {
             settingsData = new SettingData();
         }
@@ -127,6 +126,13 @@ public class Config {
         return GuiBase.isAndroid() ? ForgeConstants.ASSETS_DIR : Files.exists(Paths.get("./res")) ? "./" : Files.exists(Paths.get("./forge-gui/")) ? "./forge-gui/" : "../forge-gui";
     }
 
+    public void setPlane(String plane) {
+        this.plane = plane;
+        this.prefix = getPlanePath(plane);
+        System.out.println("Plane is being set to " + plane);
+        Cache.clear();
+    }
+
     public String getPlanePath(String plane) {
         if (plane.startsWith("<user>")) {
             return ForgeConstants.USER_ADVENTURE_DIR + "/userplanes/" + plane.substring("<user>".length()) + "/";
@@ -164,7 +170,6 @@ public class Config {
         String langFile = fileName + "-" + Lang + ext;
 
         for (int iter = 1; iter <= 2; iter++) {
-
             if (Files.exists(Paths.get(langFile))) {
                 System.out.println("Found!");
                 Cache.put(path, new FileHandle(langFile));
@@ -231,6 +236,9 @@ public class Config {
                         return CardUtil.getDeck(entry.value, false, false, "", false, false);
                     }
                 }
+            case Timewalk:
+                String deckPath = "decks/timewalk/" + adventures[index] + ".dck";
+                return CardUtil.getDeck(deckPath, false, false, "", false, false);
         }
         return null;
     }
@@ -295,6 +303,10 @@ public class Config {
 
     public SettingData getSettingData() {
         return settingsData;
+    }
+
+    public String[] getAdventures() {
+        return adventures;
     }
 
     public Array<String> getAllAdventures() {

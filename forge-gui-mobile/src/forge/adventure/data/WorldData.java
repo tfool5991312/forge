@@ -7,7 +7,6 @@ import com.badlogic.gdx.utils.SerializationException;
 import forge.adventure.util.Config;
 import forge.adventure.util.Paths;
 import forge.adventure.world.BiomeSprites;
-import forge.util.FileUtil;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -38,6 +37,13 @@ public class WorldData implements Serializable {
     private static Array<EnemyData> allEnemies;
     private static Array<ShopData> shopList;
 
+
+    public void reset() {
+        shopList = null;
+        allEnemies = null;
+        sprites = null;
+        biomes = null;
+    }
 
     public static Array<ShopData> getShopList() {
         if (shopList == null) {
@@ -75,10 +81,6 @@ public class WorldData implements Serializable {
                 return data;
         }
         return null;
-    }
-
-    public static ArrayList<String> getTownNames(String name) {
-        return new ArrayList<String>(FileUtil.readFile(Config.instance().getFilePath("world/town_names_" + name + ".txt")));
     }
 
     public BiomeSprites GetBiomeSprites() {

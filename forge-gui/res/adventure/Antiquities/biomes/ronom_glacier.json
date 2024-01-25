@@ -1,0 +1,36 @@
+{
+"startPointX": 0.3,
+"startPointY": 0.25,
+"noiseWeight": 0.2,
+"distWeight": 2.5,
+"name": "ronom_glacier",
+"tilesetAtlas": "world/tilesets/terrain.atlas",
+"tilesetName": "Blue",
+"terrain": [
+	{
+		"spriteName": "Blue_1",
+		"max": 0.2,
+		"resolution": 10
+	},
+	{
+		"spriteName": "Blue_2",
+		"min": 0.8,
+		"max": 1,
+		"resolution": 10
+	}
+],
+"width": 0.5,
+"height": 0.15,
+"color": "1050dd",
+"spriteNames": [
+],
+"enemies": [
+],
+"pointsOfInterest": [
+	"Fort"
+],
+"structures": [
+],
+"towns": [
+]
+}

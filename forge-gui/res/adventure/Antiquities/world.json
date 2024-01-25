@@ -1,0 +1,34 @@
+{
+"width": 350,
+"height": 350,
+"playerStartPosX": 0.85,
+"playerStartPosY": 0.4,
+"noiseZoomBiome": 30,
+"miniMapTileSize": 4,
+"tileSize": 16,
+"roadTileset": {
+	"tilesetAtlas": "world/tilesets/terrain.atlas",
+	"tilesetName": "Road",
+	"color": "ffffff"
+},
+"biomesSprites": "world/sprites/map_sprites.json",
+"maxRoadDistance": 2000,
+"biomesNames": [
+	"biomes/ocean.json",
+	"biomes/almaaz.json",
+	"biomes/halquina_mountains.json",
+	"biomes/malpiri_plains.json",
+	"biomes/sardian_mountains.json",
+	"biomes/yotia.json",
+	"biomes/great_desert.json",
+	"biomes/presumably_black_area.json",
+   	"biomes/coastal_kingdoms.json",
+	"biomes/kher_ridges.json",
+	"biomes/sarinthian_forest.json",
+	"biomes/ronom_lake.json",
+	"biomes/ronom_glacier.json",
+	"biomes/colekgan_mountains.json",
+	"biomes/lat_nam.json",
+	"biomes/argoth.json"
+]
+}

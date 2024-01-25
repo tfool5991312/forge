@@ -1,0 +1,35 @@
+{
+"startPointX": 0.4,
+"startPointY": 0.2,
+"noiseWeight": 0.25,
+"distWeight": 1.5,
+"name": "sarpadian_mountains",
+"tilesetAtlas": "world/tilesets/terrain.atlas",
+"tilesetName": "Red",
+"terrain": [
+	{
+		"spriteName": "Red_1",
+		"max": 0.2,
+		"resolution": 10
+	},
+	{
+		"spriteName": "Red_2",
+		"min": 0.8,
+		"max": 1,
+		"resolution": 10
+	}
+],
+"width": 0.4,
+"height": 0.3,
+"color": "b63729",
+"spriteNames": [
+],
+"enemies": [
+],
+"pointsOfInterest": [
+],
+"structures": [
+],
+"towns": [
+]
+}

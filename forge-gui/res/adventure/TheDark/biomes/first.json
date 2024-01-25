@@ -1,0 +1,36 @@
+{
+"startPointX": 0.5,
+"startPointY": 0.5,
+"noiseWeight": 0.3,
+"distWeight": 1,
+"name": "waste",
+"tilesetAtlas": "world/tilesets/terrain.atlas",
+"tilesetName": "Colorless",
+"terrain": [
+	{
+		"spriteName": "Colorless_1",
+		"max": 0.2,
+		"resolution": 5
+	},
+	{
+		"spriteName": "Colorless_2",
+		"min": 0.8,
+		"max": 1,
+		"resolution": 5
+	}
+],
+"width": 0.85,
+"height": 0.85,
+"color": "aeaeae",
+"spriteNames": [
+	"Stone"
+],
+"enemies": [
+	"Abyssal Baron"
+],
+"pointsOfInterest": [
+	"Spawn"
+],
+"structures": [
+]
+}

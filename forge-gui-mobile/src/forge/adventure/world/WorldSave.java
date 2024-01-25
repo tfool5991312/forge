@@ -34,7 +34,6 @@ public class WorldSave   {
     private final World world=new World();
     private final PointOfInterestChanges.Map pointOfInterestChanges=  new PointOfInterestChanges.Map();
 
-
     private final SignalList onLoadList=new SignalList();
 
     public final World getWorld()
@@ -125,6 +124,10 @@ public class WorldSave   {
     }
 
     public static WorldSave generateNewWorld(String name, boolean male, int race, int avatarIndex, ColorSet startingColorIdentity, DifficultyData diff, AdventureModes mode, int customDeckIndex, CardEdition starterEdition, long seed) {
+        if (mode == AdventureModes.Timewalk)
+            Config.instance().setPlane(Config.instance().getAdventures()[customDeckIndex]);
+        else
+            Config.instance().setPlane("Shandalar");
         currentSave.world.generateNew(seed);
         currentSave.pointOfInterestChanges.clear();
         boolean chaos=mode==AdventureModes.Chaos;

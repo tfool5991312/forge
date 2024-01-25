@@ -96,6 +96,8 @@ public class World implements Disposable, SaveFileContent {
 
     @Override
     public void load(SaveFileData saveFileData) {
+        String currentPlane = saveFileData.containsKey("plane") ? saveFileData.readString("plane") : "Shandalar";
+        Config.instance().setPlane(currentPlane);
 
         if (biomeImage != null)
             biomeImage.dispose();
@@ -121,6 +123,7 @@ public class World implements Disposable, SaveFileContent {
 
         SaveFileData data = new SaveFileData();
 
+        data.store("plane", Config.instance().getPlane());
         data.store("biomeImage", biomeImage);
         data.storeObject("biomeMap", biomeMap);
         data.storeObject("terrainMap", terrainMap);

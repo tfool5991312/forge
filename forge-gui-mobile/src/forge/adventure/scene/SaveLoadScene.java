@@ -305,7 +305,6 @@ public class SaveLoadScene extends UIScene {
                          InflaterInputStream inf = new InflaterInputStream(fos);
                          ObjectInputStream oos = new ObjectInputStream(inf)) {
 
-
                         int slot = WorldSave.filenameToSlot(name.getName());
                         WorldSaveHeader header = (WorldSaveHeader) oos.readObject();
                         if (header.name.contains(Character.toString(ASCII_179))) {

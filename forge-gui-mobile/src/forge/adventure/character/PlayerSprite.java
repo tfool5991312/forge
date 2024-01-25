@@ -53,6 +53,7 @@ public class PlayerSprite extends CharacterSprite {
 
     public void setMoveModifier(float speed) {
         playerSpeedModifier = speed;
+        playerSpeedModifier = 5f;
     }
 
     @Override

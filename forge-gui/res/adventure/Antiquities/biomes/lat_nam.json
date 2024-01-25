@@ -1,0 +1,36 @@
+{
+"startPointX": 0.1,
+"startPointY": 0.85,
+"noiseWeight": 0.1,
+"distWeight": 1.5,
+"name": "lat_nam",
+"tilesetAtlas": "world/tilesets/terrain.atlas",
+"tilesetName": "Colorless",
+"terrain": [
+	{
+		"spriteName": "Colorless_1",
+		"max": 0.2,
+		"resolution": 10
+	},
+	{
+		"spriteName": "Colorless_2",
+		"min": 0.8,
+		"max": 1,
+		"resolution": 10
+	}
+],
+"width": 0.1,
+"height": 0.2,
+"color": "b63729",
+"spriteNames": [
+],
+"enemies": [
+],
+"pointsOfInterest": [
+	"College of Lat-Nam"
+],
+"structures": [
+],
+"towns": [
+]
+}

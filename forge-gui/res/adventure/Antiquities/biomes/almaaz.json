@@ -1,0 +1,38 @@
+{
+"startPointX": 0.28,
+"startPointY": 0.6,
+"noiseWeight": 0.1,
+"distWeight": 1.5,
+"name": "almaaz",
+"tilesetAtlas": "world/tilesets/terrain.atlas",
+"tilesetName": "Green",
+"terrain": [
+	{
+		"spriteName": "Green_1",
+		"max": 0.2,
+		"resolution": 10
+	},
+	{
+		"spriteName": "Green_2",
+		"min": 0.8,
+		"max": 1,
+		"resolution": 10
+	}
+],
+"width": 0.65,
+"height": 0.3,
+"color": "b63729",
+"spriteNames": [
+	"DarkGras"
+],
+"enemies": [
+],
+"pointsOfInterest": [
+	"Sumifa",
+	"Terisia City"
+],
+"structures": [
+],
+"towns": [
+]
+}

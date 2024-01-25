@@ -8,6 +8,7 @@ import forge.util.MyRandom;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
@@ -34,6 +35,7 @@ public class BiomeData implements Serializable {
     public String[] enemies;
     public String[] pointsOfInterest;
     public BiomeStructureData[] structures;
+    public String[] towns;
 
     private ArrayList<EnemyData> enemyList;
     private ArrayList<PointOfInterestData> pointOfInterestList;
@@ -123,7 +125,7 @@ public class BiomeData implements Serializable {
 
     public ArrayList<String> getUnusedTownNames() {
         if (unusedTownNames == null) {
-            unusedTownNames = WorldData.getTownNames(this.name);
+            unusedTownNames = new ArrayList<>(Arrays.asList(towns));
         }
         return unusedTownNames;
     }

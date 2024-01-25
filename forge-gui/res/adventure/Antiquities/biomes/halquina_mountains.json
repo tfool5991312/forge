@@ -1,0 +1,36 @@
+{
+"startPointX": 0.2,
+"startPointY": 0.7,
+"noiseWeight": 0.2,
+"distWeight": 1.5,
+"name": "halquina_mountains",
+"tilesetAtlas": "world/tilesets/terrain.atlas",
+"tilesetName": "Red",
+"terrain": [
+	{
+		"spriteName": "Red_1",
+		"max": 0.2,
+		"resolution": 10
+	},
+	{
+		"spriteName": "Red_2",
+		"min": 0.8,
+		"max": 1,
+		"resolution": 10
+	}
+],
+"width": 0.07,
+"height": 0.25,
+"color": "b63729",
+"spriteNames": [
+	"Gravel"
+],
+"enemies": [
+],
+"pointsOfInterest": [
+],
+"structures": [
+],
+"towns": [
+]
+}
