@@ -46,6 +46,11 @@ public class BiomeData implements Serializable {
         return Color.valueOf(color);
     }
 
+    public void resetPoiCache() {
+        pointOfInterestList = null;
+        PointOfInterestData.reset();
+    }
+
     public ArrayList<EnemyData> getEnemyList() {
         if (enemyList == null) {
             enemyList = new ArrayList<>();

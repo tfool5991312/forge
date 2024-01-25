@@ -57,7 +57,6 @@ public class WorldSave   {
     }
 
     static public boolean load(int currentSlot) {
-
         String fileName = WorldSave.getSaveFile(currentSlot);
         if(!new File(fileName).exists())
             return false;
@@ -124,10 +123,14 @@ public class WorldSave   {
     }
 
     public static WorldSave generateNewWorld(String name, boolean male, int race, int avatarIndex, ColorSet startingColorIdentity, DifficultyData diff, AdventureModes mode, int customDeckIndex, CardEdition starterEdition, long seed) {
+        String newPlane = "Shandalar";
         if (mode == AdventureModes.Timewalk)
-            Config.instance().setPlane(Config.instance().getAdventures()[customDeckIndex]);
-        else
-            Config.instance().setPlane("Shandalar");
+            newPlane = Config.instance().getAdventures()[customDeckIndex];
+        if (newPlane != Config.instance().getPlane()) {
+            System.out.println("Travelling to the new plane of " + newPlane);
+            Config.instance().setPlane(newPlane);
+            currentSave.world.reset();
+        }
         currentSave.world.generateNew(seed);
         currentSave.pointOfInterestChanges.clear();
         boolean chaos=mode==AdventureModes.Chaos;

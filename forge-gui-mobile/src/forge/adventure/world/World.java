@@ -86,7 +86,8 @@ public class World implements Disposable, SaveFileContent {
 
         int biomeIndex = 0;
         for (BiomeData biome : data.GetBiomes()) {
-
+            if (biomeIndex == 0)
+                biome.resetPoiCache();
             biomeTexture[biomeIndex] = new BiomeTexture(biome, data.tileSize);
             biomeIndex++;
         }
@@ -97,7 +98,10 @@ public class World implements Disposable, SaveFileContent {
     @Override
     public void load(SaveFileData saveFileData) {
         String currentPlane = saveFileData.containsKey("plane") ? saveFileData.readString("plane") : "Shandalar";
-        Config.instance().setPlane(currentPlane);
+        if (currentPlane != Config.instance().getPlane()) {
+            Config.instance().setPlane(currentPlane);
+            worldDataLoaded = false;
+        }
 
         if (biomeImage != null)
             biomeImage.dispose();
@@ -290,6 +294,12 @@ public class World implements Disposable, SaveFileContent {
         long currentTime = System.currentTimeMillis();
         System.out.println(msg + " :\t\t" + ((currentTime - lastTime) / 1000f) + " s");
         return currentTime;
+    }
+
+    public void reset() {
+        worldDataLoaded = false;
+        if (data != null)
+            data.reset();
     }
 
     public World generateNew(long seed) {

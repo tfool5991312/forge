@@ -129,7 +129,6 @@ public class Config {
     public void setPlane(String plane) {
         this.plane = plane;
         this.prefix = getPlanePath(plane);
-        System.out.println("Plane is being set to " + plane);
         Cache.clear();
     }
 

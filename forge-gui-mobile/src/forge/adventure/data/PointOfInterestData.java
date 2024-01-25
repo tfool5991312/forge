@@ -28,9 +28,6 @@ public class PointOfInterestData implements Serializable {
     public DialogData.ActionData.QuestFlag[] questFlagsToActivate = new DialogData.ActionData.QuestFlag[0];
     public String displayName;
 
-
-
-
     private static Array<PointOfInterestData> pointOfInterestList;
     public static Array<PointOfInterestData> getAllPointOfInterest() {
         if (pointOfInterestList == null) {
@@ -39,10 +36,14 @@ public class PointOfInterestData implements Serializable {
             if (handle.exists()) {
                 pointOfInterestList = json.fromJson(Array.class, PointOfInterestData.class, handle);
             }
-
         }
         return pointOfInterestList;
     }
+
+    public static void reset() {
+        pointOfInterestList = null;
+    }
+
     public static PointOfInterestData getPointOfInterest(String name) {
         for(PointOfInterestData data: new Array.ArrayIterator<>(getAllPointOfInterest())){
             if(data.name.equals(name)) return data;
